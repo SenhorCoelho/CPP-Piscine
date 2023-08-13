@@ -4,6 +4,8 @@ Each list (from 00 to 09) contains problems that should be solved in order to ad
 
 ## C++ - Module 00
 ### --Exercise 00 - Megaphone
+The goal here is to write a program that converts all characters from any strings given to uppercase or exhibits a message in case no arguments are passed. 
+
 This is the first and simplest problem; Merely a way to get you acquainted with the new language (which so far, is similar enough to C).
 The new concepts introduced here are Namespaces, iostreams and some basic functions(if you're curious).
 
