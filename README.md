@@ -5,7 +5,7 @@ Each list (from 00 to 09) contains problems that should be solved in order to ad
 ## C++ - Module 00
 ### --Exercise 00 - Megaphone
 This is the first and simplest problem; Merely a way to get you acquainted with the new language (which so far, is similar enough to C).
-The only new concept introduced here are Namespaces, iostreams and some basic functions shall you be curious enough.
+The new concepts introduced here are Namespaces, iostreams and some basic functions(if you're curious).
 
 ### --Exercise 01
 
