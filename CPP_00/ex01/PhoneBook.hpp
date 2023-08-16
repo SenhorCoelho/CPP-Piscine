@@ -1,9 +1,10 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 # define SIZE 8
-# define CELL std::cout.width(10);
 # include "Contact.hpp"
 # include <iomanip>
+# include <cstring>
+# include <cstdlib>
 
 class PhoneBook
 {
@@ -12,7 +13,8 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		void	AddContact(void);
-		void	ShowContacts(void);
+		void	ShowList(void) const;
+		void	ShowContact(std::string str) const;
 
 	private:
 		Contact	_ConLis[SIZE];

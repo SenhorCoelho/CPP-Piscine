@@ -35,6 +35,7 @@ Contact::Contact(void)
 
 void Contact::setAll (void)
 {
+//Is there a way to make this better?
 	std::cout << "New contact's first name: " << std::endl;
 	std::cin >> this->_Fname;
 	std::cout << this->_Fname << "'s last name: " << std::endl;
