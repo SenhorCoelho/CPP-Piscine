@@ -1,4 +1,3 @@
-#include <iostream>
 #include "PhoneBook.hpp"
 
 //Auxiliary Functions
@@ -9,7 +8,7 @@ static int	CheckOverflow(std::string str);
 
 PhoneBook::PhoneBook(void) : _NbCon (0)
 {
-	std::cout << "Dale!" << std::endl;
+//	std::cout << "PhoneBook's Constructor called." << std::endl;
 	return;
 }
 
@@ -29,12 +28,12 @@ void PhoneBook::AddContact(void)
 }
 
 //Show the list of contacts in a table format
-void PhoneBook::ShowList(void) const
+int PhoneBook::ShowList(void) const
 {
 	if (this->_NbCon == 0)
 	{
 		std::cout << "There are no contacts to be shown." << std::endl;
-		return;
+		return 0;
 	}	
 	PrintHeader();
 	for (int i = 0; i < this->_NbCon; i++)
@@ -46,9 +45,10 @@ void PhoneBook::ShowList(void) const
 		PrintLine(this->_ConLis[i].getNname());
 		std::cout << std::endl;
 	}
-	return;
+	return 1;
 }
 
+//Show details of a chose contact
 void	PhoneBook::ShowContact(std::string str) const
 {
 	int i;
@@ -59,7 +59,13 @@ void	PhoneBook::ShowContact(std::string str) const
 	}
 	i = std::atoi(str.c_str());
 	i -= 1;
-	if ( i < 0 || i > this->_NbCon || i == SIZE)
+	//I'm changing this from i>this->_NbCon to i>=this->_NbCon
+	//and removing the || i == SIZE
+	//I didn't do it at first for some reason that I can't see now
+	//But since me from the past is usually right
+	//I'm adding this comment from when I come back to fix some
+	//fucked up behavior that developed from this poor decisions
+	if ( i < 0 || i >= this->_NbCon)
 	{
 		std::cout << "Index out of range." << std::endl;
 		return;
@@ -74,7 +80,7 @@ void	PhoneBook::ShowContact(std::string str) const
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "Cabou!" << std::endl;
+//	std::cout << "PhoneBook's destructor called." << std::endl;
 	return;
 }
 

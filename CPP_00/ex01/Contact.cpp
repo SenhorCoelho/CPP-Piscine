@@ -1,52 +1,37 @@
-#include <iostream>
 #include "Contact.hpp"
 
 Contact::Contact(void)
 {
-//	std::cout << "Constructor Called" << std::endl;
-//	std::cout << "New contact's first name: " << std::endl;
-//	std::cin >> this->_Fname;
-////	not sure if I'm supposed to use cin but it apparently protects against empty fields
-////	std::cout << "Your name is: " << this->_Fname << std::endl;
-//	std::cout << this->_Fname << "'s last name: " << std::endl;
-//	std::cin >> this->_Lname;
-//	std::cout << this->_Fname << "'s nickname: " << std::endl;
-//	std::cin >> this->_Nname;
-//	std::cout << this->_Fname << "'s phone number: " << std::endl;
-//	std::cin >> this->_Phone;
-//	std::cout << this->_Fname << "'s darkest secret: " << std::endl;
-//	std::cin >> this->_Secret;
-//	std::cout << "Your name is: " << this->_Fname.size() << " Characters long." << std::endl;
-//	std::cout	<< "First name: "
-//				<< _Fname
-//				<< " Last Name: "
-//				<< _Lname
-//				<< " Nickname: "
-//				<< _Nname
-//				<< " Phone number: "
-//				<< _Phone
-//				<< " Darkest Secret: "
-//				<< _Secret
-//				<< std::endl;
-//	std::cout << "New contact added!" << std::endl;
-//	Contact::_InstNbr += 1;
+//	std::cout << "Contact's constructor called." << std::endl;
 	return;
 }
 
 void Contact::setAll (void)
 {
 //Is there a way to make this better?
+	std::cout << std::endl;
 	std::cout << "New contact's first name: " << std::endl;
 	std::cin >> this->_Fname;
+	if (std::cin.eof())
+		return;
 	std::cout << this->_Fname << "'s last name: " << std::endl;
 	std::cin >> this->_Lname;
+	if (std::cin.eof())
+		return;
 	std::cout << this->_Fname << "'s nickname: " << std::endl;
 	std::cin >> this->_Nname;
+	if (std::cin.eof())
+		return;
 	std::cout << this->_Fname << "'s phone number: " << std::endl;
 	std::cin >> this->_Phone;
+	if (std::cin.eof())
+		return;
 	std::cout << this->_Fname << "'s darkest secret: " << std::endl;
 	std::cin >> this->_Secret;
+	if (std::cin.eof())
+		return;
 	std::cout << "New contact added!" << std::endl;
+	std::cout << std::endl;
 	return;
 }
 
@@ -77,6 +62,6 @@ std::string Contact::getSecret (void) const
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor Called" << std::endl;
+//	std::cout << "Contact's destructor called" << std::endl;
 	return;
 }

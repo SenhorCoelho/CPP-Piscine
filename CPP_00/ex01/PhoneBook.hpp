@@ -5,6 +5,7 @@
 # include <iomanip>
 # include <cstring>
 # include <cstdlib>
+# include <iostream>
 
 class PhoneBook
 {
@@ -13,7 +14,7 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		void	AddContact(void);
-		void	ShowList(void) const;
+		int	ShowList(void) const;
 		void	ShowContact(std::string str) const;
 
 	private:
