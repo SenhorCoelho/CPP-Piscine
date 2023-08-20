@@ -2,7 +2,7 @@
 #include <iostream>
 
 //Constructor
-Zombie::Zombie (std::string name) : _Name (name)
+Zombie::Zombie (void) : _Name ("Random")
 {
 	return;
 }
@@ -22,5 +22,12 @@ void Zombie::announce(void)
 	std::cout	<< this->_Name
 			<< ": BraiiiiiiinnnzzzZ..."
 			<< std::endl;
+	return;
+}
+
+//Name
+void Zombie::setName(std::string name)
+{
+	this->_Name = name;
 	return;
 }

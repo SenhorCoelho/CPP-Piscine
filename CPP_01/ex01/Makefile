@@ -1,10 +1,9 @@
-NAME		= brains
+NAME		= horde
 
 DEPS		= Zombie.hpp
 
 SRCS		= Zombie.cpp\
-			newZombie.cpp\
-			randomChump.cpp\
+			zombieHorde.cpp\
 			main.cpp	
 
 OBJS		= $(SRCS:.cpp=.o) 

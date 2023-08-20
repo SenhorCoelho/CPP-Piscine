@@ -1,11 +1,6 @@
-NAME		= brains
+NAME		= hibrain
 
-DEPS		= Zombie.hpp
-
-SRCS		= Zombie.cpp\
-			newZombie.cpp\
-			randomChump.cpp\
-			main.cpp	
+SRCS		= main.cpp	
 
 OBJS		= $(SRCS:.cpp=.o) 
 
