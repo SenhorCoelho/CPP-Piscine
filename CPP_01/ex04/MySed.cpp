@@ -13,7 +13,6 @@ MySed::MySed(std::string filename, std::string s1, std::string s2)
 	s1len = this->_s1.length();
 	ofilename = this->_filename + ".replace";
 
-	std::cout << s1len << std::endl;
 	ifile.open(this->_filename.c_str());
 	if (ifile.is_open())
 	{
