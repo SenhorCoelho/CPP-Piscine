@@ -1,9 +1,9 @@
-NAME		= mysed
+NAME		= harl
 
-DEPS		= MySed.hpp
+DEPS		= Harl.hpp
 
 SRCS		= main.cpp\
-			MySed.cpp
+			Harl.cpp
 
 OBJS		= $(SRCS:.cpp=.o) 
 
