@@ -1,4 +1,4 @@
-NAME		= bloodymurder
+NAME		= fixedpoint
 
 DEPS		= Fixed.hpp
 
