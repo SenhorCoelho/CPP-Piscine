@@ -12,6 +12,7 @@ Harl::~Harl(void)
 	return;
 }
 
+//ADD THE NAME OF EACH LEVEL BEFORE THE SENTENCES
 void Harl::debug(void)
 {
 	std::cout	<< "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-"
