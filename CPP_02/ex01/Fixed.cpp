@@ -23,7 +23,7 @@ Fixed::Fixed(const int nbr)
 //Const Float Constructot
 Fixed::Fixed(const float nbr)
 {
-	this->_FPVal = roundf(nbr * double(1 << this->_FracBits));
+	this->_FPVal = roundf(nbr * (1 << this->_FracBits));
 	return;
 }
 
