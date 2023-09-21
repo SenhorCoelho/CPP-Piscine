@@ -37,7 +37,7 @@ FragTrap::~FragTrap(void)
 }
 
 //Assignment operator overload
-FragTrap const &FragTrap::operator=(FragTrap const &src)
+FragTrap &FragTrap::operator=(FragTrap const &src)
 {
 	setName(src.getName());
 	setHitPts(src.getHitPts());

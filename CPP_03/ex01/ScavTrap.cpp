@@ -82,10 +82,27 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate(void)
 {
-	std::cout	<< "ScavTrap "
-				<< getName()
-				<< " is now in Gate keeper mode."
-				<< std::endl;
+	if (getEnergyPts() > 0 && getHitPts() > 0)
+	{
+		std::cout	<< "ScavTrap "
+					<< getName()
+					<< " is now in Gate keeper mode."
+					<< std::endl;
+	}
+	else if (getEnergyPts() == 0)
+	{
+		std::cout	<< "ScavTrap "
+					<< getName()
+					<< " is out of energy points and can't guard the gate."
+					<< std::endl;
+	}
+	else
+	{
+		std::cout	<< "ScavTrap "
+					<< getName()
+					<< " is dead and can't guard the gate."
+					<< std::endl;
+	}
 }
 
 void ScavTrap::displayStatus(void)

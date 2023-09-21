@@ -21,5 +21,13 @@ int main() {
     claptrap.takeDamage(TR4PCLAP.getAtkDmg());
 	std::cout << std::endl;
 	TR4PCLAP.guardGate();
+	std::cout << std::endl;
+	TR4PCLAP.setHitPts(0);
+	TR4PCLAP.guardGate();
+	std::cout << std::endl;
+	TR4PCLAP.setHitPts(100);
+	TR4PCLAP.setEnergyPts(0);
+	TR4PCLAP.guardGate();
+	std::cout << std::endl;
     return 0;
 }
