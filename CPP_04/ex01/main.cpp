@@ -11,6 +11,9 @@ int main(void)
 	Animal *RandomCat = new Cat();
 	Animal *RandomDog = new Dog();
 
+	Animal *TempDog = RandomDog; 
+	Animal *TempCat = RandomCat;
+
 	for(int i = 0; i < 10; i++)
 		if (i < 5)
 			shelter[i] = new Cat();
@@ -44,6 +47,8 @@ int main(void)
 		shelter[i]->makeSound();
 		delete shelter[i];
 	}
+	delete TempCat;
+	delete TempDog;
 
 	return 0;
 }

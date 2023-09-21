@@ -36,7 +36,7 @@ void Brain::setIdea(std::string idea)
 
 void Brain::showIdeas(void)
 {
-	for (int i = 0; i <= (_tIdeas - 1); i++)
+	for (int i = 0; i < _tIdeas; i++)
 		std::cout << ideas[i] << std::endl;
 	return;
 }
