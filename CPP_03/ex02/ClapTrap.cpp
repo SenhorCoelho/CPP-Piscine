@@ -195,3 +195,4 @@ void ClapTrap::displayStatus(void)
 				<< std::endl;
 	return;
 }
+

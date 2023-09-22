@@ -13,6 +13,11 @@ class FragTrap : public ClapTrap
 
 		FragTrap &operator=(FragTrap const &src);
 
+		
+		void attack(const std::string &target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		void displayStatus(void);
 		void highFivesGuys(void);
 
 	private:
@@ -24,3 +29,4 @@ class FragTrap : public ClapTrap
 };
 
 #endif
+

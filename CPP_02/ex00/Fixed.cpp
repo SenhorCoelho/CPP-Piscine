@@ -38,3 +38,4 @@ void Fixed::setRawBits(int const raw)
 	_FPVal = raw;
 	return;
 }
+

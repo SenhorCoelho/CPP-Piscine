@@ -18,3 +18,4 @@ class HumanA
 };
 
 #endif
+

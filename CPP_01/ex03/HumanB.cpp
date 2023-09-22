@@ -27,3 +27,4 @@ void HumanB::setWeapon(Weapon &type)
 	weapon = &type;
 	return;
 }
+

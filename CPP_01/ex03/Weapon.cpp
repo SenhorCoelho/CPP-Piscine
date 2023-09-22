@@ -23,3 +23,4 @@ void Weapon::setType(std::string ntype)
 	this->type = ntype;
 	return;
 }
+

@@ -173,3 +173,4 @@ const Fixed &Fixed::max(Fixed const &nbr1, Fixed const &nbr2)
 		return nbr1;
 	return nbr2;
 }
+

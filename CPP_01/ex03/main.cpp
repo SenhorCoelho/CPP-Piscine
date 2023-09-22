@@ -4,13 +4,12 @@
 
 int main()
 {
-	//Extra stuff on Weapon class to prevent empty inputs?
 	{
-//		Weapon club = Weapon("crude spiked club");
-//		HumanA bob("Bob", club);
-//		bob.attack();
-//		club.setType("some other type of club");
-//		bob.attack();
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
 	{
 		Weapon club = Weapon("crude spiked club");
@@ -22,3 +21,4 @@ int main()
 	}
 	return 0;
 }
+

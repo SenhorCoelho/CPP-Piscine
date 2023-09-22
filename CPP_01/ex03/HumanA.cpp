@@ -20,3 +20,4 @@ void HumanA::attack(void)
 				<< std::endl;
 	return;
 }
+

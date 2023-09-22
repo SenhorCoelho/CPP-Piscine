@@ -69,3 +69,4 @@ std::ostream &operator<<(std::ostream &o, Fixed const &src)
 	o << src.toFloat();
 	return o;
 }
+
