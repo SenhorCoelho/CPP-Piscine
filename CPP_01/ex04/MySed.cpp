@@ -32,7 +32,7 @@ MySed::MySed(std::string filename, std::string s1, std::string s2)
 		{
 			content.erase(pos, s1len);
 			content.insert(pos, this->_s2);
-			pos = content.find(this->_s1);
+			pos = content.find(this->_s1, (pos + s2.length()));
 		}
 	}
 
