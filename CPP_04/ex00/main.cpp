@@ -74,15 +74,23 @@ int main(void)
 
 	std::cout << "Dog new: ";
 	std::cout << testNewDog->getType() << std::endl;
+	std::cout << "Assign Dog new: ";
+	std::cout << AssignDogAll.getType() << std::endl;
 	std::cout << "Dog: ";
 	std::cout << testDog.getType() << std::endl;
+	std::cout << "Assign Dog: ";
+	std::cout << AssignDog.getType() << std::endl;
 	std::cout << "-------------------------------------" << std::endl;
 
 
 	std::cout << "Cat new: ";
 	std::cout << testNewCat->getType() << std::endl;
+	std::cout << "Assign Cat new: ";
+	std::cout << AssignCatAll.getType() << std::endl;
 	std::cout << "Cat: ";
 	std::cout << testCat.getType() << std::endl;
+	std::cout << "Assign Cat: ";
+	std::cout << AssignCat.getType() << std::endl;
 	std::cout << "-------------------------------------" << std::endl;
 
 
@@ -108,16 +116,16 @@ int main(void)
 
 
 	std::cout << "Animal Assign Cat new: ";
-	std::cout << CopyCatAll.getType() << std::endl;
+	std::cout << AssignCatAll.getType() << std::endl;
 	std::cout << "Animal Assign Cat: ";
-	std::cout << CopyCat.getType() << std::endl;
+	std::cout << AssignCat.getType() << std::endl;
 	std::cout << "-------------------------------------" << std::endl;
 
 
 	std::cout << "Animal Assign Dog new: ";
-	std::cout << CopyDogAll.getType() << std::endl;
+	std::cout << AssignDogAll.getType() << std::endl;
 	std::cout << "Animal Assign Dog: ";
-	std::cout << CopyDog.getType() << std::endl;
+	std::cout << AssignDog.getType() << std::endl;
 	std::cout << "-------------------------------------" << std::endl;
 
 	std::cout << "Making Sounds" << std::endl;
