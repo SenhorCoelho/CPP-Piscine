@@ -1,10 +1,9 @@
 #include "Dog.hpp"
 
 //Constructor
-Dog::Dog(void) : Animal()
+Dog::Dog(void)
 {
 	type = "Dog";
-	_sound = "Bark!";
 	_brain = new Brain();
 	std::cout << "A new Dog was created." << std::endl;
 	return;
@@ -13,6 +12,7 @@ Dog::Dog(void) : Animal()
 //Copy constructor
 Dog::Dog(Dog const &src) : Animal(src)
 {
+	_brain = new Brain();
 	*this = src;
 	std::cout << "A new Dog was created." << std::endl;
 	return;
@@ -21,8 +21,8 @@ Dog::Dog(Dog const &src) : Animal(src)
 //Destructor
 Dog::~Dog(void)
 {
-	std::cout << "A Dog has been slain." << std::endl;
 	delete _brain;
+	std::cout << "A Dog has been slain." << std::endl;
 	return;
 }
 
@@ -30,28 +30,17 @@ Dog::~Dog(void)
 Dog &Dog::operator=(Dog const &src)
 {
 	this->type = src.type;
-	this->_sound = src._sound;
-	delete this->_brain;
-	this->_brain = new Brain(*(src._brain));
 	return *this;
+}
+
+Brain *Dog::getBrain(void) const
+{
+	return this->_brain;
 }
 
 //Member functions
 void Dog::makeSound(void) const
 {
-	std::cout << _sound << std::endl;
-	return;
-}
-
-void Dog::assignBrain(Brain const &src)
-{
-	delete this->_brain;
-	this->_brain = new Brain(src);
-	return;
-}
-
-void Dog::thinkAloud(void)
-{
-	this->_brain->showIdeas();
+	std::cout << "Bark!" << std::endl;
 	return;
 }

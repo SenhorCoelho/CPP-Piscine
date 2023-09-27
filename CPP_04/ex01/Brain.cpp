@@ -1,7 +1,7 @@
 #include "Brain.hpp"
 
 //Constructor
-Brain::Brain(void) : _tIdeas(0)
+Brain::Brain(void)
 {
 	return;
 }
@@ -14,7 +14,6 @@ Brain::Brain(Brain const &src)
 
 Brain &Brain::operator=(Brain const &src)
 {
-	this->_tIdeas = src._tIdeas;
 	for(int i = 0; i < 100; i++)
 		this->ideas[i] = src.ideas[i];
 	return *this;
@@ -22,21 +21,5 @@ Brain &Brain::operator=(Brain const &src)
 
 Brain::~Brain(void)
 {
-	return;
-}
-
-void Brain::setIdea(std::string idea)
-{
-	if (_tIdeas == 100)
-		_tIdeas = 0;
-	ideas[_tIdeas] = idea;
-	_tIdeas++;
-	return;
-}
-
-void Brain::showIdeas(void)
-{
-	for (int i = 0; i < _tIdeas; i++)
-		std::cout << ideas[i] << std::endl;
 	return;
 }

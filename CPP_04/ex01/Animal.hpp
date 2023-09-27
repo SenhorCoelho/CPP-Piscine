@@ -12,18 +12,16 @@ class Animal
 		Animal(Animal const &src);
 		virtual ~Animal(void);
 
-		Animal &operator=(Animal const &src);
+		virtual Animal &operator=(Animal const &src);
 
 		std::string getType(void) const;
+		virtual Brain *getBrain(void) const;
 
-		virtual void assignBrain(Brain const &src);
-		virtual void thinkAloud(void);
 		virtual void makeSound(void) const;
 
 	protected:
 
 		std::string type;
-		std::string _sound;
 
 	private:
 

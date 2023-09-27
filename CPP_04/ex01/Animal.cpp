@@ -1,14 +1,14 @@
 #include "Animal.hpp"
 
 //Constructor
-Animal::Animal(void) : type("Base"), _sound("LOUD AND UNBEARABLE FEEDBACK NOISE")
+Animal::Animal(void) : type("Base"), _brain(NULL)
 {
 	std::cout << "A new animal was created." << std::endl;
 	return;
 }
 
 //Copy constructor
-Animal::Animal(Animal const &src) : type("Base"), _sound("LOUD AND UNBEARABLE FEEDBACK NOISE")
+Animal::Animal(Animal const &src) : type("Base")
 {
 	std::cout << "A new animal was created." << std::endl;
 	*this = src;
@@ -26,7 +26,6 @@ Animal::~Animal(void)
 Animal &Animal::operator=(Animal const &src)
 {
 	this->type = src.type;
-	this->_sound = src._sound;
 	return *this;
 }
 
@@ -36,22 +35,14 @@ std::string Animal::getType(void) const
 	return this->type;
 }
 
+Brain *Animal::getBrain(void) const
+{
+	return _brain;
+}
+
 //Member functions
 void Animal::makeSound(void) const
 {
-	std::cout << _sound << std::endl;
-	return;
-}
-
-void Animal::assignBrain(Brain const &src)
-{
-	delete this->_brain;
-	this->_brain = new Brain(src);
-	return;
-}
-
-void Animal::thinkAloud(void)
-{
-	this->_brain->showIdeas();
+	std::cout << "LOUD AND UNBEARABLE FEEDBACK NOISE" << std::endl;
 	return;
 }
