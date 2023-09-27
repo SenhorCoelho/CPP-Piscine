@@ -1,7 +1,7 @@
 #include "WrongCat.hpp"
 
 //Constructor
-WrongCat::WrongCat(void) : WrongAnimal()
+WrongCat::WrongCat(void)
 {
 	type = "WrongCat";
 	std::cout << "A new Wrong Cat was created." << std::endl;
@@ -27,7 +27,6 @@ WrongCat::~WrongCat(void)
 WrongCat &WrongCat::operator=(WrongCat const &src)
 {
 	this->type = src.type;
-	this->_sound = src._sound;
 	return *this;
 }
 

@@ -1,10 +1,9 @@
 #include "Cat.hpp"
 
 //Constructor
-Cat::Cat(void) : Animal()
+Cat::Cat(void)
 {
 	type = "Cat";
-	_sound = "Meow!";
 	std::cout << "A new Cat was created." << std::endl;
 	return;
 }
@@ -28,13 +27,12 @@ Cat::~Cat(void)
 Cat &Cat::operator=(Cat const &src)
 {
 	this->type = src.type;
-	this->_sound = src._sound;
 	return *this;
 }
 
 //Member functions
 void Cat::makeSound(void) const
 {
-	std::cout << _sound << std::endl;
+	std::cout << "Meow!" << std::endl;
 	return;
 }

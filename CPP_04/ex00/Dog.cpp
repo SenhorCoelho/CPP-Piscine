@@ -1,10 +1,9 @@
 #include "Dog.hpp"
 
 //Constructor
-Dog::Dog(void) : Animal()
+Dog::Dog(void)
 {
 	type = "Dog";
-	_sound = "Bark!";
 	std::cout << "A new Dog was created." << std::endl;
 	return;
 }
@@ -28,13 +27,12 @@ Dog::~Dog(void)
 Dog &Dog::operator=(Dog const &src)
 {
 	this->type = src.type;
-	this->_sound = src._sound;
 	return *this;
 }
 
 //Member functions
 void Dog::makeSound(void) const
 {
-	std::cout << _sound << std::endl;
+	std::cout << "Bark!" << std::endl;
 	return;
 }
