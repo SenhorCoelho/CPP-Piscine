@@ -47,17 +47,18 @@ int main(void)
 	
 	std::cout << "Creating animals to test copy and assignment" << std::endl;
 	Animal CopyCatAll(*testNewCat);
-	Animal CopyCat(testCat);
+	Cat CopyCat(testCat);
 	Animal CopyDogAll(*testNewDog);
 	Animal CopyDog(testDog);
 
 	Animal AssignCatAll = *testNewCat;
-	Animal AssignCat = testCat;
+	Cat AssignCat = testCat;
 	Animal AssignDogAll = *testNewDog;
 	Animal AssignDog = testDog;
 	std::cout << "-------------------------------------" << std::endl;
-
+/*-------------------------GETTING TYPES FOR EACH CASE---------------------------------*/
 	std::cout << "Getting Types" << std::endl;
+
 	std::cout << "Animal new: ";
 	std::cout << testNewAnimal->getType() << std::endl;
 	std::cout << "Animal: ";
@@ -128,6 +129,8 @@ int main(void)
 	std::cout << AssignDog.getType() << std::endl;
 	std::cout << "-------------------------------------" << std::endl;
 
+/*--------------------------------GETTING SOUNDS FOR EACH CASE-------------------------*/
+
 	std::cout << "Making Sounds" << std::endl;
 	std::cout << "Animal new: ";
 	testNewAnimal->makeSound();
@@ -179,16 +182,16 @@ int main(void)
 
 
 	std::cout << "Animal Assign Cat new: ";
-	CopyCatAll.makeSound();
+	AssignCatAll.makeSound();
 	std::cout << "Animal Assign Cat: ";
-	CopyCat.makeSound();
+	AssignCat.makeSound();
 	std::cout << "-------------------------------------" << std::endl;
 
 
 	std::cout << "Animal Assign Dog new: ";
-	CopyDogAll.makeSound();
+	AssignDogAll.makeSound();
 	std::cout << "Animal Assign Dog: ";
-	CopyDog.makeSound();
+	AssignDog.makeSound();
 	std::cout << "-------------------------------------" << std::endl;
 
 	delete testNewAnimal;
