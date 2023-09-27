@@ -1,10 +1,9 @@
 #include "Cat.hpp"
 
 //Constructor
-Cat::Cat(void) : Animal()
+Cat::Cat(void)
 {
 	type = "Cat";
-	_sound = "Meow!";
 	_brain = new Brain();
 	std::cout << "A new Cat was created." << std::endl;
 	return;
@@ -13,6 +12,7 @@ Cat::Cat(void) : Animal()
 //Copy constructor
 Cat::Cat(Cat const &src) : Animal(src)
 {
+	_brain = new Brain();
 	*this = src;
 	std::cout << "A new Cat was created." << std::endl;
 	return;
@@ -21,8 +21,8 @@ Cat::Cat(Cat const &src) : Animal(src)
 //Destructor
 Cat::~Cat(void)
 {
-	std::cout << "A Cat has been slain." << std::endl;
 	delete _brain;
+	std::cout << "A Cat has been slain." << std::endl;
 	return;
 }
 
@@ -30,26 +30,19 @@ Cat::~Cat(void)
 Cat &Cat::operator=(Cat const &src)
 {
 	this->type = src.type;
-	this->_sound = src._sound;
+	*_brain = *src._brain;
 	return *this;
+}
+
+//Getter
+Brain *Cat::getBrain(void) const
+{
+	return this->_brain;
 }
 
 //Member functions
 void Cat::makeSound(void) const
 {
-	std::cout << _sound << std::endl;
-	return;
-}
-
-void Cat::assignBrain(Brain const &src)
-{
-	delete this->_brain;
-	this->_brain = new Brain(src);
-	return;
-}
-
-void Cat::thinkAloud(void)
-{
-	this->_brain->showIdeas();
+	std::cout << "Meow!" << std::endl;
 	return;
 }
