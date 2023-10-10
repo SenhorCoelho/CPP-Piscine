@@ -1,78 +1,77 @@
 #include "FragTrap.hpp"
 
-//Constructor
+//Default Constructor
 FragTrap::FragTrap(void) : ClapTrap()
-{
-	this->_Name = "Placeholder";
-	this->_HitPts = 100;
-	this->_EnergyPts = 100;
-	this->_AtkDmg = 30;
-	std::cout << this->_Name << " Constructor Called.(FragTrap)" << std::endl;
+{	
+	setHitPts(100);
+	setEnergyPts(100);
+	setAtkDmg(30);
+	std::cout << getName() << " Constructor Called.(FragTrap)" << std::endl;
 	return;
 }
 
-//Name constructor
+//Name Constructor
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-
-	this->_Name = name;
-	this->_HitPts = 100;
-	this->_EnergyPts = 100;
-	this->_AtkDmg = 30;
+	setHitPts(100);
+	setEnergyPts(100);
+	setAtkDmg(30);
+	std::cout << getName() << " Constructor Called.(FragTrap)" << std::endl;
 	return;
 }
 
-//Copy constructor
+//Copy Constructor
 FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src)
 {
 	*this = src;
-	std::cout << this->_Name << " Constructor Called.(FragTrap)" << std::endl;
+	std::cout << getName() << "Constructor Called." << std::endl;
 	return;
 }
 
 //Destructor
 FragTrap::~FragTrap(void)
 {
-	std::cout << this->_Name << " Destructor Called.(FragTrap)" << std::endl;
+	std::cout << getName() << " Destructor Called.(FragTrap)" << std::endl;
 	return;
 }
 
-//Assignment operator overload
+//Assignment Operator Overload
 FragTrap &FragTrap::operator=(FragTrap const &src)
 {
-	this->_Name = src._Name;
-	this->_HitPts = src._HitPts;
-	this->_EnergyPts = src._EnergyPts;
-	this->_AtkDmg = src._AtkDmg;
+	setName(src.getName());
+	setHitPts(src.getHitPts());
+	setEnergyPts(src.getEnergyPts());
+	setAtkDmg(src.getAtkDmg());
 	return *this;
 }
+
 
 //Member Functions
 void FragTrap::attack(const std::string &target)
 {
-	if (this->_EnergyPts > 0 && this->_HitPts > 0)
+	if (getEnergyPts() > 0 && getHitPts() > 0)
 	{ 
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " attacks "
 					<< target
 					<< ", causing "
-					<< this->_AtkDmg
+					<< getAtkDmg()
 					<< " point(s) of damage!"
 					<< std::endl;
-		this->_EnergyPts -= 1;
+		setEnergyPts(getEnergyPts() - 1);
 	}
-	else if (this->_EnergyPts == 0)
+	else if (getEnergyPts() == 0)
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " is out of energy points and can't attack."
 					<< std::endl;
 	}
 	else
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " is dead and can't attack."
 					<< std::endl;
 	}
@@ -85,11 +84,11 @@ void FragTrap::takeDamage(unsigned int amount)
 {
 	int	HP;
 
-	HP = this->_HitPts;
+	HP = getHitPts();
 	if (HP > 0)
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " takes "
 					<< amount
 					<< " point(s) of damage!"
@@ -97,13 +96,13 @@ void FragTrap::takeDamage(unsigned int amount)
 		if ((HP - int(amount)) <= 0)
 		{
 			std::cout	<< "FragTrap "
-						<< this->_Name
+						<< getName()
 						<< " has been killed by the attack."
 						<< std::endl;
-			this->_HitPts = 0;
+			setHitPts(0);
 		}
 		else
-			this->_HitPts = HP - amount;
+			setHitPts(HP - amount);
 		displayStatus();
 		return;
 	}
@@ -112,28 +111,28 @@ void FragTrap::takeDamage(unsigned int amount)
 
 void FragTrap::beRepaired(unsigned int amount)
 {
-	if (this->_EnergyPts > 0 && this->_HitPts > 0)
+	if (getEnergyPts() > 0 && getHitPts() > 0)
 	{ 
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " repairs itself, healing "
 					<< amount
 					<< " hit point(s)!"
 					<< std::endl;
-		this->_EnergyPts -= 1;
-		this->_HitPts += amount;
+		setEnergyPts(getEnergyPts() - 1);
+		setHitPts(getHitPts() + amount);
 	}
-	else if (this->_EnergyPts == 0)
+	else if (getEnergyPts() == 0)
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " is out of energy points and can't repair itself."
 					<< std::endl;
 	}
 	else
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " is dead and can't repair itself."
 					<< std::endl;
 	}
@@ -143,24 +142,24 @@ void FragTrap::beRepaired(unsigned int amount)
 
 void FragTrap::highFivesGuys(void)
 {
-	if (this->_EnergyPts > 0 && this->_HitPts > 0)
+	if (getEnergyPts() > 0 && getHitPts() > 0)
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " is requesting High Fives, Guys!"
 					<< std::endl;
 	}
-	else if (this->_EnergyPts == 0)
+	else if (getEnergyPts() == 0)
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " is out of energy and can't request High Fives."
 					<< std::endl;
 	}
 	else
 	{
 		std::cout	<< "FragTrap "
-					<< this->_Name
+					<< getName()
 					<< " is dead and can't request High Fives."
 					<< std::endl;
 	}
@@ -170,18 +169,17 @@ void FragTrap::highFivesGuys(void)
 void FragTrap::displayStatus(void)
 {
 	std::cout	<< "FragTrap "
-				<< this->_Name
+				<< getName()
 				<< " current status: "
 				<< std::endl
 				<< "Hit Points: "
-				<< this->_HitPts
+				<< getHitPts()
 				<< std::endl
 				<< "Energy Points: "
-				<< this->_EnergyPts
+				<< getEnergyPts()
 				<< std::endl
 				<< "Attack Damage: "
-				<< this->_AtkDmg
+				<< getAtkDmg()
 				<< std::endl;
 	return;
 }
-
