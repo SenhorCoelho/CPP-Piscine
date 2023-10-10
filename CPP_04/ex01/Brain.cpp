@@ -23,3 +23,4 @@ Brain::~Brain(void)
 {
 	return;
 }
+
