@@ -35,6 +35,7 @@ int main(void)
 		
 		//Trying to go above 1
 		//Nuts.GradeUp();
+
 	}
 	catch (Bureaucrat::GradeTooHighException &err)
 	{

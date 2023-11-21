@@ -3,7 +3,6 @@
 //Default Constructor
 Bureaucrat::Bureaucrat(void) : _name("Joe Mama"), _grade(69)
 {
-	std::cout << "Default" << std::endl;
 	return;
 }
 
@@ -12,15 +11,13 @@ Bureaucrat::Bureaucrat(std::string const name, unsigned int grade) :
 _name(name), _grade(grade) 
 {
 	HandleErrors();
-	std::cout << "Name" << std::endl;
 	return;
 }
 
 //Copy Constructor
-Bureaucrat::Bureaucrat(const Bureaucrat &src) :
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : 
 _name(src.getName()), _grade(src.getGrade())
 {
-	std::cout << "Copy" << std::endl;
 	return;
 }
 
@@ -49,7 +46,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 	//Name must be const, so can't redefine it when copying;
 	//this->_name = src.getName();
 	this->_grade = src.getGrade();
-	std::cout << "Assignment" << std::endl;
 	return *this;
 }
 
