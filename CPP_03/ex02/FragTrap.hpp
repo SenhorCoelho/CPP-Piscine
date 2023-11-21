@@ -19,13 +19,6 @@ class FragTrap : public ClapTrap
 		void beRepaired(unsigned int amount);
 		void displayStatus(void);
 		void highFivesGuys(void);
-
-	private:
-
-		std::string		_Name;
-		unsigned int	_HitPts;
-		unsigned int	_EnergyPts;
-		unsigned int	_AtkDmg;
 };
 
 #endif

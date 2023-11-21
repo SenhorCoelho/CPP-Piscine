@@ -18,15 +18,6 @@ class ScavTrap : public ClapTrap
 		void beRepaired(unsigned int amount);
 		void guardGate(void);
 		void displayStatus(void);
-
-	private:
-
-		std::string		_Name;
-		unsigned int	_HitPts;
-		unsigned int	_EnergyPts;
-		unsigned int	_AtkDmg;
-
-
 };
 
 #endif

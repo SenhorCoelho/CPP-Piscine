@@ -26,3 +26,4 @@ class WrongAnimal
 };
 
 #endif
+

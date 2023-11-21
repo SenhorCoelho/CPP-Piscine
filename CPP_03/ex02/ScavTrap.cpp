@@ -3,23 +3,20 @@
 //Default Constructor
 ScavTrap::ScavTrap(void) : ClapTrap()
 {	
-	this->_Name = "Placeholder";
-	this->_HitPts = 100;
-	this->_EnergyPts = 50;
-	this->_AtkDmg = 20;
-	std::cout << this->_Name << " Constructor Called.(ScavTrap)" << std::endl;
+	setHitPts(100);
+	setEnergyPts(50);
+	setAtkDmg(20);
+	std::cout << getName() << " Constructor Called.(ScavTrap)" << std::endl;
 	return;
 }
 
 //Name Constructor
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	
-	this->_Name = name;
-	this->_HitPts = 100;
-	this->_EnergyPts = 50;
-	this->_AtkDmg = 20;
-	std::cout << this->_Name << " Constructor Called.(ScavTrap)" << std::endl;
+	setHitPts(100);
+	setEnergyPts(50);
+	setAtkDmg(20);
+	std::cout << getName() << " Constructor Called.(ScavTrap)" << std::endl;
 	return;
 }
 
@@ -27,24 +24,24 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src)
 {
 	*this = src;
-	std::cout << this->_Name << "Constructor Called." << std::endl;
+	std::cout << getName() << "Constructor Called." << std::endl;
 	return;
 }
 
 //Destructor
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << this->_Name << " Destructor Called.(ScavTrap)" << std::endl;
+	std::cout << getName() << " Destructor Called.(ScavTrap)" << std::endl;
 	return;
 }
 
 //Assignment Operator Overload
 ScavTrap &ScavTrap::operator=(ScavTrap const &src)
 {
-	this->_Name = src.getName();
-	this->_HitPts = src.getHitPts();
-	this->_EnergyPts = src.getEnergyPts();
-	this->_AtkDmg = src.getAtkDmg();
+	setName(src.getName());
+	setHitPts(src.getHitPts());
+	setEnergyPts(src.getEnergyPts());
+	setAtkDmg(src.getAtkDmg());
 	return *this;
 }
 
@@ -52,29 +49,29 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &src)
 //Member Functions
 void ScavTrap::attack(const std::string &target)
 {
-	if (this->_EnergyPts > 0 && this->_HitPts > 0)
+	if (getEnergyPts() > 0 && getHitPts() > 0)
 	{ 
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " attacks "
 					<< target
 					<< ", causing "
-					<< this->_AtkDmg
+					<< getAtkDmg()
 					<< " point(s) of damage!"
 					<< std::endl;
-		this->_EnergyPts -= 1;
+		setEnergyPts(getEnergyPts() - 1);
 	}
-	else if (this->_EnergyPts == 0)
+	else if (getEnergyPts() == 0)
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " is out of energy points and can't attack."
 					<< std::endl;
 	}
 	else
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " is dead and can't attack."
 					<< std::endl;
 	}
@@ -87,11 +84,11 @@ void ScavTrap::takeDamage(unsigned int amount)
 {
 	int	HP;
 
-	HP = this->_HitPts;
+	HP = getHitPts();
 	if (HP > 0)
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " takes "
 					<< amount
 					<< " point(s) of damage!"
@@ -99,13 +96,13 @@ void ScavTrap::takeDamage(unsigned int amount)
 		if ((HP - int(amount)) <= 0)
 		{
 			std::cout	<< "ScavTrap "
-						<< this->_Name
+						<< getName()
 						<< " has been killed by the attack."
 						<< std::endl;
-			this->_HitPts = 0;
+			setHitPts(0);
 		}
 		else
-			this->_HitPts = HP - amount;
+			setHitPts(HP - amount);
 		displayStatus();
 		return;
 	}
@@ -114,28 +111,28 @@ void ScavTrap::takeDamage(unsigned int amount)
 
 void ScavTrap::beRepaired(unsigned int amount)
 {
-	if (this->_EnergyPts > 0 && this->_HitPts > 0)
+	if (getEnergyPts() > 0 && getHitPts() > 0)
 	{ 
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " repairs itself, healing "
 					<< amount
 					<< " hit point(s)!"
 					<< std::endl;
-		this->_EnergyPts -= 1;
-		this->_HitPts += amount;
+		setEnergyPts(getEnergyPts() - 1);
+		setHitPts(getHitPts() + amount);
 	}
-	else if (this->_EnergyPts == 0)
+	else if (getEnergyPts() == 0)
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " is out of energy points and can't repair itself."
 					<< std::endl;
 	}
 	else
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " is dead and can't repair itself."
 					<< std::endl;
 	}
@@ -145,24 +142,24 @@ void ScavTrap::beRepaired(unsigned int amount)
 
 void ScavTrap::guardGate(void)
 {
-	if (this->_EnergyPts > 0 && this->_HitPts > 0)
+	if (getEnergyPts() > 0 && getHitPts() > 0)
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " is now in Gate keeper mode."
 					<< std::endl;
 	}
-	else if (this->_EnergyPts == 0)
+	else if (getEnergyPts() == 0)
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " is out of energy points and can't guard the gate."
 					<< std::endl;
 	}
 	else
 	{
 		std::cout	<< "ScavTrap "
-					<< this->_Name
+					<< getName()
 					<< " is dead and can't guard the gate."
 					<< std::endl;
 	}
@@ -171,17 +168,17 @@ void ScavTrap::guardGate(void)
 void ScavTrap::displayStatus(void)
 {
 	std::cout	<< "ScavTrap "
-				<< this->_Name
+				<< getName()
 				<< " current status: "
 				<< std::endl
 				<< "Hit Points: "
-				<< this->_HitPts
+				<< getHitPts()
 				<< std::endl
 				<< "Energy Points: "
-				<< this->_EnergyPts
+				<< getEnergyPts()
 				<< std::endl
 				<< "Attack Damage: "
-				<< this->_AtkDmg
+				<< getAtkDmg()
 				<< std::endl;
 	return;
 }

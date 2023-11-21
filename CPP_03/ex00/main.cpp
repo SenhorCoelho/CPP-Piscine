@@ -15,9 +15,10 @@ int main() {
 	std::cout << std::endl;
 	TR4PCLAP.setAtkDmg(9999);
 	std::cout << std::endl;
-	TR4PCLAP.attack("claptrap");
+	TR4PCLAP.attack("CL4P-TP");
 	std::cout << std::endl;
     claptrap.takeDamage(TR4PCLAP.getAtkDmg());
+	
 	std::cout << std::endl;
     return 0;
 }

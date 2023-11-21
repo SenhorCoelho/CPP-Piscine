@@ -41,8 +41,10 @@ Brain *Animal::getBrain(void) const
 }
 
 //Member functions
+/*
 void Animal::makeSound(void) const
 {
 	std::cout << "LOUD AND UNBEARABLE FEEDBACK NOISE" << std::endl;
 	return;
 }
+*/

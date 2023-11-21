@@ -36,3 +36,4 @@ void WrongCat::makeSound(void) const
 	std::cout << "Bark!" << std::endl;
 	return;
 }
+
