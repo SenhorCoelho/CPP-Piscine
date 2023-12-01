@@ -3,6 +3,10 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
+# include "Form.hpp"
+
+//Had to forward declare due to cyclic dependency
+class Form;
 
 class Bureaucrat
 {
@@ -40,6 +44,7 @@ class Bureaucrat
 		void GradeUp(void);
 		void GradeDown(void);
 		void HandleErrors(void) const;
+		void signForm(Form &paperwork);
 
 	private:
 

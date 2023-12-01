@@ -73,12 +73,12 @@ const std::string Form::getName(void) const
 	return this->_name;
 }
 
-const unsigned int Form::getSignGrade(void) const
+unsigned int Form::getSignGrade(void) const
 {
 	return this->_signGrade;
 }
 
-const unsigned int Form::getExecGrade(void) const
+unsigned int Form::getExecGrade(void) const
 {
 	return this->_execGrade;
 }
@@ -89,7 +89,7 @@ bool Form::isSigned(void) const
 	return this->_signed;
 }
 
-void Form::beSigned(const Bureaucrat signatory)
+void Form::beSigned(Bureaucrat signatory)
 {
 	if (this->_signed == true)
 		throw FormIsSigned();
@@ -102,7 +102,7 @@ void Form::HandleErrors(void) const
 {
 	if (this->_signGrade < 1 || this->_execGrade < 1)
 		throw GradeTooHighException();
-	else if (this->_signGrade < 150 || this->_execGrade < 150)
+	else if (this->_signGrade > 150 || this->_execGrade > 150)
 		throw GradeTooLowException();
 	return;
 }

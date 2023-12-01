@@ -1,8 +1,11 @@
 #ifndef FORM_HPP
 # define FORM_HPP
-# include "Bureaucrat.hpp"
 # include <iostream>
 # include <stdexcept>
+# include "Bureaucrat.hpp"
+
+//Had to forward declare due to cyclic dependency
+class Bureaucrat;
 
 class Form
 {
@@ -41,12 +44,12 @@ class Form
 
 		//Getters & Setters
 		const std::string getName(void) const;
-		const unsigned int getSignGrade(void) const;
-		const unsigned int getExecGrade(void) const;
+		unsigned int getSignGrade(void) const;
+		unsigned int getExecGrade(void) const;
 
 		//Member Functions/Methods
 		bool isSigned(void) const;
-		void beSigned(const Bureaucrat signatory);
+		void beSigned(Bureaucrat signatory);
 		void HandleErrors(void) const;
 
 	private:
@@ -58,6 +61,6 @@ class Form
 
 };
 
-
+	std::ostream &operator<<(std::ostream &o, Form const &src);
 
 #endif

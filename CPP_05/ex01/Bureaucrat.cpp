@@ -94,3 +94,26 @@ void Bureaucrat::HandleErrors(void) const
 		throw GradeTooLowException();
 	return;
 }
+
+void Bureaucrat::signForm(Form &paperwork)
+{
+	if(paperwork.isSigned())
+		std::cout	<< this->_name
+					<< " couldn't sign form "
+					<< paperwork.getName()
+					<< " because it's already signed."
+					<< std::endl;
+	else if(this->getGrade() > paperwork.getSignGrade())
+		std::cout	<< this->_name
+					<< " couldn't sign form "
+					<< paperwork.getName()
+					<< " because his grade is too low."
+					<< std::endl;
+	else
+		std::cout	<< this->_name
+					<< " signed form "
+					<< paperwork.getName()
+					<< "."
+					<< std::endl;
+	paperwork.beSigned(*this);
+}
